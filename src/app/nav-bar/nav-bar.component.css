@@ -1,0 +1,13 @@
+:host{
+    display: flex;
+    
+    background-color: #18181B;
+    color: white;
+    padding: 10px 20px;
+    justify-content: space-between;
+    height: 3vh;
+}
+
+span{
+    cursor: pointer;
+}

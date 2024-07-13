@@ -1,0 +1,10 @@
+:host{
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    min-height: calc(100vh - (100vh - 100%));
+    
+}
+.button{
+    cursor: pointer;
+}

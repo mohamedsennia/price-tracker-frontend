@@ -1,0 +1,38 @@
+:host{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    height: 97vh;
+
+}
+h1{
+    font-family:    'Libre Franklin', sans-serif;;
+}
+img{
+    width: 50% ;
+}
+#introduction{
+    width: 40%;
+}
+#introduction *{
+    margin-bottom: 5px;
+}
+p{
+    font-size: 10pt;
+    color: #71717A;
+
+
+}
+.button{
+    color: white;
+    background-color: #18181B;
+    padding: 5px;
+    display: inline-block;
+    width: fit-content;
+    font-family: sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}

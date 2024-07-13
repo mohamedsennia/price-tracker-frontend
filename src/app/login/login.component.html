@@ -1,0 +1,50 @@
+<div id="left-side">
+    <h1 id="logo">Price Tracker</h1>
+    <svg class="graph" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+        <polyline class="line" points="00,80 20,40 30,40 40,20 50,50 60,10 70,30 80,70 90,50, 95,10"></polyline>
+
+    </svg>
+</div>
+<div id="right-side">
+ 
+    <div class="flip-card">
+        <div id="switch-section">
+            <span [ngClass]="{'active':flip=='inactive'}" (click)="toggleFlip('inactive')">Login</span>
+            <span [ngClass]="{'active':flip=='active'}"  (click)="toggleFlip('active')">Sign up</span>
+        </div>
+        <div class="flip-card-inner" [@flipAnimation]="flip" >
+          <div class="flip-card-front">
+            <div class="container">
+                <h1>Log in</h1>
+                <form class="form"   id="login-form">
+                    
+                    <input autocomplete="email" placeholder="example@email.com" type="text" formControlName="email" >
+                    <input autocomplete="current-password" placeholder="Your password" type="password" formControlName="password">
+                    <input appColorChanger class="submit" type="submit" value="Login">
+            
+                </form>
+            
+                
+            </div>
+          </div>
+          <div  class="flip-card-back">
+            <div class="container">
+                <h1>Sign up</h1>
+                <form class="form"  id="signUp-form">
+                    <input placeholder="First Name" type="text" formControlName="firstName" >
+                    <input placeholder="Last Name" type="text" formControlName="lastName" >
+                    <input autocomplete="email" placeholder="example@email.com" type="text" formControlName="email" >
+                    <input autocomplete="current-password" placeholder="Your password" type="password" formControlName="password">
+                    <input appColorChanger class="submit" type="submit" value="Sing up">
+            
+                </form>
+            
+                
+            </div>
+          </div>
+        </div>
+    
+</div>
+
+
