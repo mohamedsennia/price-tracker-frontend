@@ -3,7 +3,7 @@
     height: fit-content;
     width: fit-content;
     min-height: calc(100vh - (100vh - 100%));
-    
+    min-width: calc(100vw - (100vw - 100%));
 }
 .button{
     cursor: pointer;

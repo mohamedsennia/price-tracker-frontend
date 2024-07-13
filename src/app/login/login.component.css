@@ -10,6 +10,7 @@
     background-color: #102027;
 }
 #logo{
+    text-align: center;
     margin: auto;
     color: white;
     font-size: 3rem;
@@ -55,6 +56,17 @@ h1{margin-left: 15px;margin-top: 10%;}
 }
 #signUp-form{
     height: 65%;
+}
+form div{
+    width: 100%;
+    aspect-ratio: 9;
+   
+}
+.errorMessage{
+    color: red ;
+    font-size: 9pt;
+    float: left;
+    margin-top: 1%;
 }
 input{
     width: 100%;

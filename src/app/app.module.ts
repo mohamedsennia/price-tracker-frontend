@@ -9,6 +9,9 @@ import { FeaturesDetailsComponent } from './features-details/features-details.co
 import { LoginComponent } from './login/login.component';
 import { ColorChangerDirective } from './color-changer.directive';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +19,15 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
     NavBarComponent,
     FeaturesDetailsComponent,
     LoginComponent,
-    ColorChangerDirective
+    ColorChangerDirective,
+    ProductsListComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

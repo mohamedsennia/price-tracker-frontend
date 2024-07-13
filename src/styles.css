@@ -6,13 +6,11 @@
 body{
     height: fit-content;
     width: fit-content;
-    min-height: 100vh;
-
+    min-width: calc(100vw - (100vw - 100%));
     background-color: whitesmoke;
 }
 html{
-    height: fit-content;
-    width: fit-content;
+    min-width: calc(100vw - (100vw - 100%));
 
     min-height: 100vh; 
    
