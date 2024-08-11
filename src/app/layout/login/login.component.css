@@ -1,8 +1,8 @@
 :host{
-    height: 100vh;
-    width: 100vw;
+    height:calc(97vh - 20px);
+    width: calc(100vw - (100vw - 100%    ) );
     display: flex;
-    
+  
 }
 #left-side{
     width: 60%;

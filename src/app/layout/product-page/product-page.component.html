@@ -1,0 +1,10 @@
+
+<div style="padding: 1%;">
+    <div id="scatterPlot"></div>
+<div id="buttons-container">
+    <div class="button" [ngStyle]="{'background-color': selectedTime==1 ?'red':'#2C3E50' }" (click)="getProductRecordsLastWeek()">Last week</div>
+    <div class="button" [ngStyle]="{'background-color': selectedTime==2 ?'red':'#2C3E50' }" (click)="getProductRecordsLastMonth()">Last Month</div>
+    <div class="button" [ngStyle]="{'background-color': selectedTime==3 ?'red':'#2C3E50' }" (click)="getProductRecordsLastTrimester()">Last Trimester</div>
+    <div class="button" [ngStyle]="{'background-color': selectedTime==4 ?'red':'#2C3E50' }" (click)="getProductRecordsLastYear()">Last Year</div>
+</div>
+</div>

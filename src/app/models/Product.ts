@@ -5,4 +5,10 @@ export class Product{
     constructor(private id:number, private name:string){
         this.records=[]
     }
+    getId(){
+        return this.id
+    }
+    getName(){
+        return this.name
+    }
 }

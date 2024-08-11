@@ -1,6 +1,0 @@
-:host{
-    width: calc(100vw - (100vw - 100%));
-
-    min-height: calc(97vh - 20px);
-    display: blocks;
-}

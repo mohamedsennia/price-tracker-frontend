@@ -1,0 +1,22 @@
+<h1>Your products List</h1>
+<section id="products-section">
+    <div class="container" *ngIf="products.length>0">
+ 
+        <div class="item elevation" *ngFor="let product of products">
+            <h3 class="item-name">{{product.getName()}}</h3>
+ 
+           
+            <div class="buttons-container">
+            <div class="button elevation" [routerLink]="['/product/'+product.getId()]">View</div>
+            <div class="button elevation    ">Stop Tracking</div>
+        </div>
+        </div>
+    </div>
+    <h1 *ngIf="products.length==0">You Don't have any items in your list</h1>
+    <div class="item elevation  add-card">
+        <h2>Track a new product</h2>
+        <span style="font-size: 9pt;">Add a new product to your collection to track its price</span>
+        <input [(ngModel)]="name" type="text" placeholder="Product Name">
+        <div (click)="addProduct()" class="button elevation    ">Add New Product</div>
+    </div>
+</section>

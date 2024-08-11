@@ -5,7 +5,7 @@
   
     width: 80%;
     margin: auto;
-    height: 97vh;
+    height: calc(97vh - 20px);
 
 }
 h1{
@@ -30,6 +30,8 @@ p{
     color: white;
     background-color: #18181B;
     padding: 5px;
+    margin-top: 4%;
+    font-size: 18pt;
     display: inline-block;
     width: fit-content;
     font-family: sans-serif;

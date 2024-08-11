@@ -3,15 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { FeaturesDetailsComponent } from './features-details/features-details.component';
-import { LoginComponent } from './login/login.component';
+import { MainComponent } from './layout/main/main.component';
+import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
+import { FeaturesDetailsComponent } from './layout/features-details/features-details.component';
+import { LoginComponent } from './layout/login/login.component';
 import { ColorChangerDirective } from './color-changer.directive';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import { ReactiveFormsModule } from '@angular/forms';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { ProductPageComponent } from './product-page/product-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductsListComponent } from './layout/products-list/products-list.component';
+import { ProductPageComponent } from './layout/product-page/product-page.component';
+import { LandingPageComponent } from './layout/landing-page/landing-page.component';
+import { ConnectionService } from './services/connection.service';
+import { UserService } from './services/user.service';
+import { ProductService } from './services/product.service';
+import { RecordService } from './services/record.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,15 +27,18 @@ import { ProductPageComponent } from './product-page/product-page.component';
     LoginComponent,
     ColorChangerDirective,
     ProductsListComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ ConnectionService,UserService,ProductService,RecordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
