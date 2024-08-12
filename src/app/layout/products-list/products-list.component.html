@@ -8,7 +8,8 @@
            
             <div class="buttons-container">
             <div class="button elevation" [routerLink]="['/product/'+product.getId()]">View</div>
-            <div class="button elevation    ">Stop Tracking</div>
+            <div class="button elevation    " *ngIf="product.isActivated()" (click)="toggleProductActivition(product)">Stop Tracking</div>
+            <div class="button elevation    " *ngIf="!product.isActivated()" (click)="toggleProductActivition(product)">Start Tracking</div>
         </div>
         </div>
     </div>

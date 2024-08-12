@@ -30,14 +30,20 @@ export class ProductsListComponent implements OnInit,OnDestroy{
     
   }
   addProduct(){
-    this.subsecreptions.push(this.productService.addProduct(new Product(null,this.name)).subscribe(param=>{
+    this.subsecreptions.push(this.productService.addProduct(new Product(null,this.name,true)).subscribe(param=>{
       window.location.reload()
     }))
+  }
+  toggleProductActivition(product:Product){
+    product.toggleActivated();
+    this.productService.toggleProductActivition(product.getId()).subscribe((param)=>{
+      
+    });
   }
   ngOnDestroy(): void {
     for(let subscription of this.subsecreptions){
       subscription.unsubscribe()
     }
   }
-  
+ 
 }

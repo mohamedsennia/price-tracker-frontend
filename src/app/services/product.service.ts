@@ -18,8 +18,9 @@ export class ProductService{
            return this.connectionService.getProducts().pipe(map(param=>{
             this.products=[]
             for(let p of param){
-                this.products.push(new Product(p["id"],p["name"]))
+                this.products.push(new Product(p["id"],p["name"],p["activated"]))
             }
+            
             return this.products.slice()
            },err=>{
             return []
@@ -28,5 +29,8 @@ export class ProductService{
     }
     addProduct(product:Product){
      return   this.connectionService.addProduct(product)
+    }
+    toggleProductActivition(id:number){
+      return  this.connectionService.toggleProductActivition(id);
     }
 }

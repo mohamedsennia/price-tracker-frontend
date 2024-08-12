@@ -42,7 +42,8 @@ addProduct(product:Product){
   
  return this.httpClient.post(this.apiLink+"/product/addProduct",{
     "name":product.getName(),
-    "ownerId":this.user.getId()
+    "ownerId":this.user.getId(),
+    "activated":product.isActivated()
   })
 }
 getProductRecord(id:number){
@@ -69,5 +70,10 @@ getProductRecordsLastYear(id:number){
   var headers_object = new HttpHeaders().set('Content-Type', 'application/json')
   .set('Authorization', `Bearer `+this.user.getKey());
  return this.httpClient.get<any[]>(this.apiLink+"/record/getProductRecordLastYear/"+id,{headers:headers_object})
+}
+toggleProductActivition(id:number){
+  var headers_object = new HttpHeaders().set('Content-Type', 'application/json')
+  .set('Authorization', `Bearer `+this.user.getKey());
+  return this.httpClient.put(this.apiLink+"/product/toggleProductActivition/"+id,null);
 }
 }
