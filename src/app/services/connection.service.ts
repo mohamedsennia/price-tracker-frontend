@@ -31,6 +31,23 @@ loggIn(user:User){
     localStorage.setItem("userKey",this.user.getKey())
   }))
 }
+signUp(user:User){
+  return this.httpClient.post(this.apiLink+"/auth/signUp",{
+    "firstName":user.getFirstName(),
+    "lastName":user.getLastName(),
+    "email":user.getEmail(),
+    "password":user.getPassword(),
+    "role":"User",
+    "products":[]
+  }).pipe(map(param=>{
+    this.user=user
+    this.user.setKey(param['token'])
+    this.user.setId(param['id'])
+    
+    localStorage.setItem("userId",this.user.getId().toString())
+    localStorage.setItem("userKey",this.user.getKey())
+  }))
+}
 getProducts(){
   var headers_object = new HttpHeaders().set('Content-Type', 'application/json')
   .set('Authorization', `Bearer `+this.user.getKey());
@@ -75,5 +92,10 @@ toggleProductActivition(id:number){
   var headers_object = new HttpHeaders().set('Content-Type', 'application/json')
   .set('Authorization', `Bearer `+this.user.getKey());
   return this.httpClient.put(this.apiLink+"/product/toggleProductActivition/"+id,null);
+}
+getProductFinishedIntialScrapping(id:number){
+  var headers_object = new HttpHeaders().set('Content-Type', 'application/json')
+  .set('Authorization', `Bearer `+this.user.getKey());
+  return this.httpClient.get(this.apiLink+"/product/finishedIntialScrapping/"+id)
 }
 }

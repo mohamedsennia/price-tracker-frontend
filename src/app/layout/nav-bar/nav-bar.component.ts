@@ -13,4 +13,8 @@ constructor(private userService:UserService){
 isLoggedIn(){
   return this.userService.isLoggedIn()
 }
+logOut(){
+  localStorage.clear()
+  window.location.reload()
+}
 }

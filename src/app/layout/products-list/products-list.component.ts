@@ -19,18 +19,14 @@ export class ProductsListComponent implements OnInit,OnDestroy{
   }
   ngOnInit(): void {
    
-    if( this.productService.getProducts() instanceof Observable){
-      this.subsecreptions.push((this.productService.getProducts() as Observable<Product[]>).subscribe(param=>{
-        this.products=param
-
-      }))
-    }else{
-      this.products=this.productService.getProducts() as Product[]
-    }
+    this.subsecreptions.push((this.productService.getProducts() as Observable<Product[]>).subscribe(param=>{
+      this.products=param
+      this.productService.getNotReadyProducts(this.products,window)
+    })) 
     
   }
   addProduct(){
-    this.subsecreptions.push(this.productService.addProduct(new Product(null,this.name,true)).subscribe(param=>{
+    this.subsecreptions.push(this.productService.addProduct(new Product(null,this.name,true,false)).subscribe(param=>{
       window.location.reload()
     }))
   }

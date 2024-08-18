@@ -7,9 +7,13 @@
  
            
             <div class="buttons-container">
-            <div class="button elevation" [routerLink]="['/product/'+product.getId()]">View</div>
-            <div class="button elevation    " *ngIf="product.isActivated()" (click)="toggleProductActivition(product)">Stop Tracking</div>
-            <div class="button elevation    " *ngIf="!product.isActivated()" (click)="toggleProductActivition(product)">Start Tracking</div>
+            <div class="button elevation" *ngIf="product.hasFinishedIntialScrapping()" [routerLink]="['/product/'+product.getId()]">View</div>
+            <div class="button elevation    " *ngIf="product.isActivated() && product.hasFinishedIntialScrapping()" (click)="toggleProductActivition(product)">Stop Tracking</div>
+            <div class="button elevation    " *ngIf="!product.isActivated() && product.hasFinishedIntialScrapping()" (click)="toggleProductActivition(product)">Start Tracking</div>
+            <div *ngIf="!product.hasFinishedIntialScrapping()" style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                <span style="margin-bottom: 5px;">Intial scrapping, please wait</span>
+                <div class="loader" ></div>
+            </div>
         </div>
         </div>
     </div>

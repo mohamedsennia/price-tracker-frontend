@@ -103,6 +103,16 @@ justify-content: center;
 .add-card .button{
     background-color: #2C3E50;
 }
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: l2 1s infinite linear;
+  }
+  @keyframes l2 {to{transform: rotate(1turn)}}
 @media screen and (max-width:720px) {
     .container{
       grid-template-columns: 1fr 1fr;

@@ -47,10 +47,21 @@ toggleFlip(side:string){
   this.flip =side;
 }
 signUp(){
-  console.log(this.signUpForm.value)
+  if(this.signUpForm.valid){
+  this.userService.signUp(new User(null,this.signUpForm.value["firstName"],this.signUpForm.value["lastName"],this.signUpForm.value['email'],this.signUpForm.value['password'],"")).subscribe((param)=>{
+    this.router.navigate(['/dashboard'])
+
+  },err=>{
+    this.userService.logOff()
+    console.log(err)
+    window.alert('Please check your signUp info')
+  })
+}else{
+  window.alert('Please check your login info')
+}
 }
 login(){
-  console.log("password : "+ this.loginForm.value['password'])
+
   if(this.loginForm.valid){
     
     this.userService.loggIn(new User(null,"","",this.loginForm.value['email'],this.loginForm.value['password'],"")).subscribe((param)=>{

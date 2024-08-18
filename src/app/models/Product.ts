@@ -2,7 +2,7 @@ import { Record } from "./Record"
 export class Product{
    
     private records:Record[]
-    constructor(private id:number, private name:string,private activated:boolean){
+    constructor(private id:number, private name:string,private activated:boolean,private finishedIntialScrapping:boolean){
         this.records=[]
     }
     getId(){
@@ -17,5 +17,8 @@ export class Product{
     }
     toggleActivated(){
         this.activated!=this.activated;
+    }
+    hasFinishedIntialScrapping(){
+        return this.finishedIntialScrapping;
     }
 }

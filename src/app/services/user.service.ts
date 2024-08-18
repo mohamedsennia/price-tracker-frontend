@@ -25,6 +25,10 @@ export class UserService{
   
    return this.connectionService.loggIn(user)
  }
+ signUp(user:User){
+  this.user=user
+  return this.connectionService.signUp(user);
+ }
  logOff(){
   localStorage.clear()
    this.user=null

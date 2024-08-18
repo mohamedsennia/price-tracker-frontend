@@ -1,1 +1,3 @@
-<span id="log" [routerLink]="['/']">Price Tracker</span><span *ngIf="!isLoggedIn()" [routerLink]="['/login']">Login</span>
+<span id="log" [routerLink]="['/']">Price Tracker</span>
+<span *ngIf="!isLoggedIn()" [routerLink]="['/login']">Login</span>
+<span *ngIf="isLoggedIn()" (click)="logOut()">Log out</span>
