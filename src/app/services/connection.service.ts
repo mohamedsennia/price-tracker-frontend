@@ -6,7 +6,7 @@ import { Product } from "../models/Product";
 
 @Injectable({"providedIn":"root"})
 export class ConnectionService{
-    static link="http://localhost:8090";
+    static link="http://price-tracker-backend-production-d4a5.up.railway.app";
     private apiLink=ConnectionService.link+"/api";
     private user:User;
 constructor(private httpClient:HttpClient){
