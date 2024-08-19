@@ -16,7 +16,7 @@ export class Product{
         return this.activated;
     }
     toggleActivated(){
-        this.activated!=this.activated;
+        this.activated=!this.activated;
     }
     hasFinishedIntialScrapping(){
         return this.finishedIntialScrapping;

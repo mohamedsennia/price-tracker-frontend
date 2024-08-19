@@ -199,6 +199,8 @@ this.svg.selectAll('circle')
   
 
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    for(let subscription of this.subscreptions){
+      subscription.unsubscribe()
+    }
   }
   }

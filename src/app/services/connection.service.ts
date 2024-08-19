@@ -6,7 +6,7 @@ import { Product } from "../models/Product";
 
 @Injectable({"providedIn":"root"})
 export class ConnectionService{
-    static link="https://price-tracker-backend-production-d4a5.up.railway.app";
+    static link="https://soothing-nourishment-production.up.railway.app";
     private apiLink=ConnectionService.link+"/api";
     private user:User;
 constructor(private httpClient:HttpClient){
@@ -43,7 +43,7 @@ signUp(user:User){
     this.user=user
     this.user.setKey(param['token'])
     this.user.setId(param['id'])
-
+    
     localStorage.setItem("userId",this.user.getId().toString())
     localStorage.setItem("userKey",this.user.getKey())
   }))

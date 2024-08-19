@@ -33,7 +33,7 @@ export class ProductsListComponent implements OnInit,OnDestroy{
   toggleProductActivition(product:Product){
     product.toggleActivated();
     this.productService.toggleProductActivition(product.getId()).subscribe((param)=>{
-      
+  
     });
   }
   ngOnDestroy(): void {
