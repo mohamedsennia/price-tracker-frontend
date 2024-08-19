@@ -43,7 +43,7 @@ signUp(user:User){
     this.user=user
     this.user.setKey(param['token'])
     this.user.setId(param['id'])
-    
+    console.log(param)
     localStorage.setItem("userId",this.user.getId().toString())
     localStorage.setItem("userKey",this.user.getKey())
   }))
