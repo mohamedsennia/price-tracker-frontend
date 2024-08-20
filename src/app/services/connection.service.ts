@@ -6,7 +6,7 @@ import { Product } from "../models/Product";
 
 @Injectable({"providedIn":"root"})
 export class ConnectionService{
-    static link="https://soothing-nourishment-production.up.railway.app";
+    static link="http://localhost:8080";
     private apiLink=ConnectionService.link+"/api";
     private user:User;
 constructor(private httpClient:HttpClient){
